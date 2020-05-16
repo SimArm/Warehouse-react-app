@@ -1,5 +1,5 @@
 import React from "react";
-import "./Edit.sass";
+import "./Edit.scss";
 
 const Edit = () => {
     return (

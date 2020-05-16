@@ -1,5 +1,5 @@
 import React from "react";
-import "./Preview.sass";
+import "./Preview.scss";
 
 const Preview  = () => {
     return (
