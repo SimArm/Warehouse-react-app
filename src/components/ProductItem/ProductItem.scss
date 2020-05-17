@@ -1,6 +1,22 @@
-.productItem {
-    ul{
-        display: flex;
-        
+.disabled {
+        text-decoration: line-through;
+        color: gray;
+        button{
+            pointer-events: none;
+            color: gray;
+            .link {
+                color: gray;
+                text-decoration: none;
+            }
+        }
+}
+tr{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px gray solid;
+    th {
+        width: 9% ;
+        font-weight: normal;
     }
 }

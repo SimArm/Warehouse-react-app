@@ -1,24 +1,34 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./ProductItem.scss";
+import deleteItem from "../productsCommands/deleteItem";
 
-const ProductItem = ({Name, EAN, Type, Weight, Color}) => {
+const ProductItem = ({ID, Name, EAN, Type, Weight, Color, Quantity, Price}) => {
 
     const [isActive, setActive] = useState(true);
 
     const classes =`productItem ${isActive ? 'active' : 'disabled'}`;
+    const viewLink = `/products/${ID}`;
+    const editLink = `/products/${ID}/edit`;
+
+    const deleteProduct = () => {
+        window.confirm('Are you sure to delete?') && deleteItem(ID);
+    }
 
     return (
-        <ul className={classes}>
-            <li>{Name}</li>
-            <li>{EAN}</li>
-            <li>{Type}</li>
-            <li>{Weight}</li>
-            <li>{Color}</li>
-            <li><input type="checkbox" onClick={()=>setActive(!isActive)}/></li>
-            <li><button className="view">View</button></li>
-            <li><button className="edit">Edit</button></li>
-            <li><button className="delete">Delete</button></li>
-        </ul>
+        <tr className={classes}>
+            <th>{Name}</th>
+            <th>{EAN}</th>
+            <th>{Type}</th>
+            <th>{Weight}</th>
+            <th>{Color}</th>
+            <th>{Quantity}</th>
+            <th>{Price}</th>
+            <th><input type="checkbox" onClick={()=>setActive(!isActive)}/></th>
+            <th><button><Link to={viewLink} className="link">View</Link></button></th>
+            <th><button><Link to={editLink} className="link">Edit</Link></button></th>
+            <th><button onClick={deleteProduct}>Delete</button></th>
+        </tr>
     );
 }
 

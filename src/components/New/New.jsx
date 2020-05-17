@@ -8,6 +8,8 @@ const New = () => {
     const [typeValue, setType] = useState('');
     const [weightValue, setWeight] = useState('');
     const [colorValue, setColor] = useState('');
+    const [quantityValue, setQuantity] = useState('');
+    const [priceValue, setPrice] = useState('');
 
     const updateName = (event) => {
         const { value } = event.target;
@@ -34,8 +36,18 @@ const New = () => {
         setColor(value);
     }
 
+    const updateQuantity = (event) => {
+        const { value } = event.target;
+        setQuantity(value);
+    }
+
+    const updatePrice = (event) => {
+        const { value } = event.target;
+        setPrice(value);
+    }
+
     const onSave = () => {
-        const product = {Name: nameValue, EAN: EANValue, Type:typeValue, Weight: weightValue, Color: colorValue,};
+        const product = {Name: nameValue, EAN: EANValue, Type:typeValue, Weight: weightValue, Color: colorValue, Quantity: quantityValue, Price: priceValue,};
         console.log(product);
         let productArray = JSON.parse(localStorage.getItem('productsData')) || [];
         productArray.push(product);
@@ -50,6 +62,8 @@ const New = () => {
                 <input type="text" placeholder="Product type" name="Type" value={typeValue} onChange={updateType}/>
                 <input type="text" placeholder="Weight" name="Weight" value={weightValue} onChange={updateWeight}/>
                 <input type="text" placeholder="Color" name="Color" value={colorValue} onChange={updateColor}/>
+                <input type="text" placeholder="Quantity" name="Quantity" value={quantityValue} onChange={updateQuantity}/>
+                <input type="text" placeholder="Price" name="Price" value={priceValue} onChange={updatePrice}/>
                 <button onClick={onSave}>Save</button>
             </form>
         </div>

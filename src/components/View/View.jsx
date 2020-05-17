@@ -1,14 +1,14 @@
 import React from "react";
-import "./Edit.scss";
+import "./View.scss";
 import { useParams } from "react-router-dom";
 
-const Edit = () => {
+const View  = () => {
     const { productId } = useParams();
     return (
         <div>
-            {productId}
+            
         </div>
     );
 }
 
-export default Edit;
+export default View;
