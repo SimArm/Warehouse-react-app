@@ -18,5 +18,25 @@ tr{
     th {
         width: 9% ;
         font-weight: normal;
+        button {
+            border-radius: 4px;
+            box-shadow: none;
+            .link {
+                text-decoration: none;
+                color: black;
+            }
+        }
+        .buttonView {
+            background-color: #e7e7e7;
+            :hover {
+
+            }
+        }
+        .buttonEdit {
+            background-color: #008CBA;;
+        }
+        .buttonDelete {
+            background-color: #f44336;
+        }
     }
 }

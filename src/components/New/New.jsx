@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./New.scss";
 
+import getData from "../productsCommands/getData";
+import setData from "../productsCommands/setData";
+
 const New = () => {
 
     const [nameValue, setName] = useState('');
@@ -48,10 +51,9 @@ const New = () => {
 
     const onSave = () => {
         const product = {Name: nameValue, EAN: EANValue, Type:typeValue, Weight: weightValue, Color: colorValue, Quantity: quantityValue, Price: priceValue,};
-        console.log(product);
-        let productArray = JSON.parse(localStorage.getItem('productsData')) || [];
+        let productArray = getData() || [];
         productArray.push(product);
-        localStorage.setItem('productsData', JSON.stringify(productArray));
+        setData(productArray);
     }
 
     return (

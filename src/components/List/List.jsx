@@ -2,9 +2,11 @@ import React from "react";
 import "./List.scss";
 
 import ProductItem from "../ProductItem";
+import ListTotalSection from "../ListTotalSection";
+import getData from "../productsCommands/getData";
 
 const List = () => {
-    const Data = JSON.parse(localStorage.getItem('productsData')) || [];
+    const Data = getData() || [];
 
     return (
         <div>
@@ -36,6 +38,7 @@ const List = () => {
                     );
                 })
             }
+            <ListTotalSection data={Data}/>
         </div>
     );    
 }

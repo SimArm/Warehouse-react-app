@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
 
 import "./App.scss";
 import Edit from "./components/Edit";
@@ -14,25 +14,25 @@ function App() {
         <nav className="nav">
           <ul>
             <li>
-              <Link to="/products">Products</Link>
+              <NavLink to="/products" activeClassName="activeNav">Products</NavLink>
             </li>
             <li>
-              <Link to="/create">Create Product</Link>
+              <NavLink to="/create" activeClassName="activeNav">Create Product</NavLink>
             </li>
           </ul>
         </nav>
         <div className="contentWrapper">
           <Switch>
-            <Route path="/products" exact>
+            <Route path="/products" exact strict>
               <List />
             </Route>
-            <Route path="/products/:productId" exact>
+            <Route path="/products/:productId" exact strict>
               <View />
             </Route>
-            <Route path="/create" exact>
+            <Route path="/create" exact strict>
               <New />
             </Route>
-            <Route path="/products/:productId/edit" exact>
+            <Route path="/products/:productId/edit" exact strict>
               <Edit />
             </Route>
           </Switch>
