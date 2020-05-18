@@ -2,10 +2,12 @@ const totalPrice = (dataArray) => {
     let total = 0;
 
     dataArray.forEach((key) => { 
-        let keyValue = key.Price;
-        let numberValue = parseInt(keyValue); 
+        let keyPrice = (key.Enabled ? key.Price : 0);
+        let keyQuantity = key.Quantity;
+        let numberPriceValue = parseInt(keyPrice);
+        let numberQuantityValue = parseInt(keyQuantity); 
 
-        total += numberValue; 
+        total += (numberPriceValue * numberQuantityValue); 
     })
         
     return total;
@@ -15,7 +17,7 @@ const totalQuantity = (dataArray) => {
     let total = 0;
 
     dataArray.forEach((key) => { 
-        let keyValue = key.Quantity;
+        let keyValue = (key.Enabled ? key.Quantity : 0);
         let numberValue = parseInt(keyValue); 
 
         total += numberValue; 

@@ -4,28 +4,41 @@ import { useParams } from "react-router-dom";
 import { getQuantityHistory } from "../../productsCommands/changesHistoryCommands";
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
+import getData from "../../productsCommands/getData";
 
 const QuantityHistory = () => {
     const { productId } = useParams();
+
+    const ProductsData = getData() || [];
+    const Product = ProductsData[productId];
+    const productName = Product.Name;
+
     const quantityHistory = getQuantityHistory() || [];
     const filterredQuantity = quantityHistory.filter(history => history.ProductId == productId).slice(-5);
-    const newQuantityHistory = filterredQuantity.map((quantity) => parseInt(quantity.NewQuantity));
+    const chartQuantity = filterredQuantity.map((quantity) => parseInt(quantity.NewQuantity));
+    const chartDate = filterredQuantity.map((dates) => dates.Changetime);
+
+
 
     const options = {
         title: {
           text: 'Quantity History'
         },
+        xAxis: {
+            categories: chartDate,
+          },
+        yAxis: {
+            title: {
+                text: 'Quantity'
+            }
+        },
         series: [{
-          data: newQuantityHistory
+          data: chartQuantity,
+          name: productName
         }]
       }
     return (
         <div>
-            { filterredQuantity.map((quantity) => {
-                return (
-                    <div>Quantity change from: {quantity.OldQuantity} to: {quantity.NewQuantity} at: {quantity.ChangeTime}</div>                                            );
-                })
-            }
             <HighchartsReact
                 highcharts={Highcharts}
                 options={options}

@@ -7,7 +7,7 @@ const ListTotalSection = ({data}) => {
 
     return (
         <div className="totalSection">
-            Total products quantity: {totalQuantity(ProductsData)}  Total Price: {totalPrice(ProductsData)}
+            Total products: {totalQuantity(ProductsData)}  Total Price: {totalPrice(ProductsData)}
         </div>
     );
 }

@@ -92,9 +92,9 @@ const Edit = () => {
                 <label htmlFor="Color">Color:</label>
                 <input type="text" name="Color" id="Color" value={colorValue} onChange={updateColor}/>
                 <label htmlFor="Quantity">Quantity:</label>
-                <input type="text" name="Quantity" id="Quantity" value={quantityValue} onChange={updateQuantity}/>
+                <input type="number" name="Quantity" id="Quantity" value={quantityValue} onChange={updateQuantity}/>
                 <label htmlFor="Price">Price:</label>
-                <input type="text" name="Price" id="Price" value={priceValue} onChange={updatePrice}/>
+                <input type="number" name="Price" id="Price" value={priceValue} onChange={updatePrice}/>
                 <button onClick={saveData}>Save</button>
             </form>
         </div>

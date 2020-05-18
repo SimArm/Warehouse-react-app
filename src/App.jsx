@@ -12,14 +12,16 @@ function App() {
     <Router>
       <div className="wrapper">
         <nav className="nav">
-          <ul>
-            <li>
-              <NavLink to="/products" activeClassName="activeNav">Products</NavLink>
-            </li>
-            <li>
-              <NavLink to="/create" activeClassName="activeNav">Create Product</NavLink>
-            </li>
-          </ul>
+          <div className="navWrapper">
+            <ul>
+              <li>
+                <NavLink to="/products" activeClassName="activeNav">Products</NavLink>
+              </li>
+              <li>
+                <NavLink to="/create" activeClassName="activeNav">Create Product</NavLink>
+              </li>
+            </ul>
+          </div>
         </nav>
         <div className="contentWrapper">
           <Switch>

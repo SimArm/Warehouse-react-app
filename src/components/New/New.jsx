@@ -50,7 +50,7 @@ const New = () => {
     }
 
     const onSave = () => {
-        const product = {Name: nameValue, EAN: EANValue, Type:typeValue, Weight: weightValue, Color: colorValue, Quantity: quantityValue, Price: priceValue,};
+        const product = {Name: nameValue, EAN: EANValue, Type:typeValue, Weight: weightValue, Color: colorValue, Quantity: quantityValue, Price: priceValue, Enabled: 'true',};
         let productArray = getData() || [];
         productArray.push(product);
         setData(productArray);
@@ -60,19 +60,19 @@ const New = () => {
         <div className="newItemWrapper">
             <form className="newItemForm">
                 <label htmlFor="Name">Name:</label>
-                <input type="text" placeholder="Product name" name="Name" value={nameValue} onChange={updateName} />
+                <input type="text" placeholder="Product name" name="Name" id="Name" value={nameValue} onChange={updateName} />
                 <label htmlFor="EAN">EAN:</label>
-                <input type="text" placeholder="EAN" name="EAN" value={EANValue} onChange={updateEAN}/>
+                <input type="text" placeholder="EAN" name="EAN" id="EAN" value={EANValue} onChange={updateEAN}/>
                 <label htmlFor="Type">Type:</label>
-                <input type="text" placeholder="Product type" name="Type" value={typeValue} onChange={updateType}/>
+                <input type="text" placeholder="Product type" name="Type" id="Type" value={typeValue} onChange={updateType}/>
                 <label htmlFor="Weight">Weight</label>
-                <input type="text" placeholder="Weight" name="Weight" value={weightValue} onChange={updateWeight}/>
+                <input type="number" placeholder="Weight" name="Weight" id="Weight" value={weightValue} onChange={updateWeight}/>
                 <label htmlFor="Color">Color:</label>
-                <input type="text" placeholder="Color" name="Color" value={colorValue} onChange={updateColor}/>
+                <input type="text" placeholder="Color" name="Color" id="Color" value={colorValue} onChange={updateColor}/>
                 <label htmlFor="Quantity">Quantity:</label>
-                <input type="text" placeholder="Quantity" name="Quantity" value={quantityValue} onChange={updateQuantity}/>
+                <input type="number" placeholder="Quantity" name="Quantity" id="Quantity" value={quantityValue} onChange={updateQuantity}/>
                 <label htmlFor="Price">Price:</label>
-                <input type="text" placeholder="Price" name="Price" value={priceValue} onChange={updatePrice}/>
+                <input type="number" placeholder="Price" name="Price" id="Price" value={priceValue} onChange={updatePrice}/>
                 <button onClick={onSave}>Save</button>
             </form>
         </div>

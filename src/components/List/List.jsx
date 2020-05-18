@@ -34,6 +34,7 @@ const List = () => {
                             Color={Product.Color}
                             Quantity={Product.Quantity}
                             Price={Product.Price}
+                            Enabled={Product.Enabled}
                         />
                     );
                 })

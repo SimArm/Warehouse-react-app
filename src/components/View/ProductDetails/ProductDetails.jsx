@@ -8,14 +8,15 @@ const ProductDetails = () => {
     const ProductsData = getData() || [];
     const Product = ProductsData[productId];
 
+    const classes = Product.Quantity == 0 && 'noStock';
     return (
         <div className="detailsWrapper">
-            <h2>Product: {Product.Name}</h2>
+            <h2 className={classes}>Product: {Product.Name}</h2>
             <div>EAN: {Product.EAN}</div>
             <div>Type: {Product.Type}</div>
             <div>Weight: {Product.Weight}</div>
             <div>Color: {Product.Color}</div>
-            <div>Quantity: {Product.Quantity}</div>
+            <div className={classes}>Quantity: {Product.Quantity > 0 ? Product.Quantity : 'Out of stock'}</div>
             <div>Price: {Product.Price}</div>
             <div>
                 <p> Description:

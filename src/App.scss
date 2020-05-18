@@ -12,7 +12,7 @@ body {
     }
 }
 .nav {
-    background-color: #d1d1d1;
+    background-color: #e4e6e5;
     width: 100%;
     ul {
         display: flex;
@@ -21,7 +21,7 @@ body {
         li {
             margin: 0 10px;
             a {
-                padding: 10px;
+                padding: 14px 0;
                 text-decoration: none;
                 color: black;
             }
@@ -29,7 +29,7 @@ body {
     }
 }
 .activeNav {
-    border-bottom: 2px solid black;
+    border-bottom: 3px solid black;
 }
 .contentWrapper {
     width: 100%;
