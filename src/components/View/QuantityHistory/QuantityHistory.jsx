@@ -11,7 +11,7 @@ const QuantityHistory = () => {
         <div>
             { quantityHistory.filter(history => history.ProductId == productId).map((quantity) => {
                 return (
-                        <div>Quantity change from: {quantity.OldQuantity} to: {quantity.NewQuantity} at: {quantity.ChangeTime}</div>                                            );
+                    <div>Quantity change from: {quantity.OldQuantity} to: {quantity.NewQuantity} at: {quantity.ChangeTime}</div>                                            );
                 })
             }
         </div>

@@ -57,14 +57,21 @@ const New = () => {
     }
 
     return (
-        <div>
-            <form className="addProductItem">
+        <div className="newItemWrapper">
+            <form className="newItemForm">
+                <label htmlFor="Name">Name:</label>
                 <input type="text" placeholder="Product name" name="Name" value={nameValue} onChange={updateName} />
+                <label htmlFor="EAN">EAN:</label>
                 <input type="text" placeholder="EAN" name="EAN" value={EANValue} onChange={updateEAN}/>
+                <label htmlFor="Type">Type:</label>
                 <input type="text" placeholder="Product type" name="Type" value={typeValue} onChange={updateType}/>
+                <label htmlFor="Weight">Weight</label>
                 <input type="text" placeholder="Weight" name="Weight" value={weightValue} onChange={updateWeight}/>
+                <label htmlFor="Color">Color:</label>
                 <input type="text" placeholder="Color" name="Color" value={colorValue} onChange={updateColor}/>
+                <label htmlFor="Quantity">Quantity:</label>
                 <input type="text" placeholder="Quantity" name="Quantity" value={quantityValue} onChange={updateQuantity}/>
+                <label htmlFor="Price">Price:</label>
                 <input type="text" placeholder="Price" name="Price" value={priceValue} onChange={updatePrice}/>
                 <button onClick={onSave}>Save</button>
             </form>

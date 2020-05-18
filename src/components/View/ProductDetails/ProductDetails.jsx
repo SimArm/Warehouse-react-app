@@ -17,8 +17,8 @@ const ProductDetails = () => {
             <div>Color: {Product.Color}</div>
             <div>Quantity: {Product.Quantity}</div>
             <div>Price: {Product.Price}</div>
-            <div>Description:
-                <p>
+            <div>
+                <p> Description:
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque magnam dolor ullam omnis expedita praesentium nesciunt sed ea repellat eos tempora placeat quam, eaque voluptatem eum ipsa enim pariatur alias.
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque magnam dolor ullam omnis expedita praesentium nesciunt sed ea repellat eos tempora placeat quam, eaque voluptatem eum ipsa enim pariatur alias.
                 </p>

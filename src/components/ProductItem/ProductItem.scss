@@ -14,12 +14,16 @@ tr{
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     border-bottom: 1px gray solid;
     th {
         width: 9% ;
         font-weight: normal;
         button {
-            border-radius: 4px;
+            padding: 10px 20px;
+            background-color: white;
+            color: black;
+            border: 2px solid;
             box-shadow: none;
             .link {
                 text-decoration: none;
@@ -27,16 +31,28 @@ tr{
             }
         }
         .buttonView {
-            background-color: #e7e7e7;
-            :hover {
-
-            }
+            border-color: rgb(89, 194, 89);
+        }
+        .buttonView:hover{
+            cursor: pointer;
+            background-color: rgb(89, 194, 89); 
+            color: white;
         }
         .buttonEdit {
-            background-color: #008CBA;;
+            border-color: #008CBA;
+        }
+        .buttonEdit:hover {
+            cursor: pointer;
+            background-color: #008CBA; 
+            color: white;
         }
         .buttonDelete {
+            border-color: #f44336;
+        }
+        .buttonDelete:hover {
+            cursor: pointer;
             background-color: #f44336;
+            color: white;
         }
     }
 }

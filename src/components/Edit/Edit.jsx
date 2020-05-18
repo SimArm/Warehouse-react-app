@@ -64,7 +64,7 @@ const Edit = () => {
     }
     
     const updateHistoryData = () => {
-        const changeDate = new Date().toDateString();
+        const changeDate = new Date().toJSON();
         const priceChange = {ProductId: productId, OldPrice: Product.Price, NewPrice: priceValue, ChangeTime: changeDate, };
         const quantityChange = {ProductId: productId, OldQuantity: Product.Quantity, NewQuantity: quantityValue, ChangeTime: changeDate, };
         PricesHistoryData.push(priceChange);

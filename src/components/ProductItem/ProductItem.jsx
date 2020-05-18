@@ -25,8 +25,8 @@ const ProductItem = ({ID, Name, EAN, Type, Weight, Color, Quantity, Price}) => {
             <th>{Quantity}</th>
             <th>{Price}</th>
             <th><input type="checkbox" onClick={()=>setActive(!isActive)}/></th>
-            <th><button className="buttonView"><Link to={viewLink} className="link">View</Link></button></th>
-            <th><button className="buttonEdit"><Link to={editLink} className="link">Edit</Link></button></th>
+            <th><Link to={viewLink} className="link"><button className="buttonView">View</button></Link></th>
+            <th><Link to={editLink} className="link"><button className="buttonEdit">Edit</button></Link></th>
             <th><button className="buttonDelete" onClick={deleteProduct}>Delete</button></th>
         </tr>
     );
