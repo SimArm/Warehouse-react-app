@@ -80,21 +80,35 @@ const Edit = () => {
 
     return (
         <div className="editWrapper">
-            <form>
-                <label htmlFor="Product">Product:</label>
-                <input type="text" name="Product" id="Product" value={nameValue} onChange={updateName}/>
-                <label htmlFor="EAN">EAN:</label>
-                <input type="text" name="EAN" id="EAN" value={EANValue} onChange={updateEAN}/>
-                <label htmlFor="Type">Type:</label>
-                <input type="text" name="Type" id="Type" value={typeValue} onChange={updateType}/>
-                <label htmlFor="Weight">Weight in grams:</label>
-                <input type="number" name="Weight" id="Weight" value={weightValue} onChange={updateWeight}/>
-                <label htmlFor="Color">Color:</label>
-                <input type="text" name="Color" id="Color" value={colorValue} onChange={updateColor}/>
-                <label htmlFor="Quantity">Quantity:</label>
-                <input type="number" name="Quantity" id="Quantity" value={quantityValue} onChange={updateQuantity}/>
-                <label htmlFor="Price">Price:</label>
-                <input type="number" name="Price" id="Price" value={priceValue} onChange={updatePrice}/>
+            <form className="editFormWrapper">
+                <div>
+                    <label htmlFor="Product">Product:</label>
+                    <input type="text" name="Product" id="Product" value={nameValue} onChange={updateName}/>
+                </div>
+                <div>
+                    <label htmlFor="EAN">EAN:</label>
+                    <input type="text" name="EAN" id="EAN" value={EANValue} onChange={updateEAN}/>
+                </div>
+                <div>
+                    <label htmlFor="Type">Type:</label>
+                    <input type="text" name="Type" id="Type" value={typeValue} onChange={updateType}/>
+                </div>
+                <div>
+                    <label htmlFor="Weight">Weight:</label>
+                    <input type="number" name="Weight" id="Weight" value={weightValue} onChange={updateWeight}/>
+                </div>
+                <div>
+                    <label htmlFor="Color">Color:</label>
+                    <input type="text" name="Color" id="Color" value={colorValue} onChange={updateColor}/>
+                </div>
+                <div>
+                    <label htmlFor="Quantity">Quantity:</label>
+                    <input type="number" name="Quantity" id="Quantity" value={quantityValue} onChange={updateQuantity}/>
+                </div>
+                <div>
+                    <label htmlFor="Price">Price:</label>
+                    <input type="number" name="Price" id="Price" value={priceValue} onChange={updatePrice}/>
+                </div>
                 <button onClick={saveData}>Save</button>
             </form>
         </div>

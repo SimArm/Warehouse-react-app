@@ -4,10 +4,20 @@
         align-items: center;
         justify-content: center;
         flex-flow: column;
-        input {
-            margin: 2px;
+        div {
             width: 40vw;
-            height: 25px;
+            display: flex;
+            justify-content: space-between;
+            label {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            input {
+                margin: 2px;
+                width: calc(100% - 80px);
+                height: 25px;
+            }
         }
         button {
             font-size: 18px;
