@@ -71,7 +71,7 @@ const Edit = () => {
 
     const updateHistoryData = () => {
         const changeDate = Intl.DateTimeFormat('default', dateFormatting).format(new Date()); 
-        const priceChange = {ProductId: productId, OldPrice: Product.Price, NewPrice: priceValue, ChangeTime: changeDate.toString(), };
+        const priceChange = {ProductId: productId, OldPrice: Product.Price, NewPrice: priceValue, ChangeTime: changeDate, };
         const quantityChange = {ProductId: productId, OldQuantity: Product.Quantity, NewQuantity: quantityValue, ChangeTime: changeDate, };
         PricesHistoryData.push(priceChange);
         QuantityHistoryData.push(quantityChange);

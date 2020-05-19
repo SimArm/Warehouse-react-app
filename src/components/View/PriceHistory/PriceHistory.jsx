@@ -17,7 +17,7 @@ const PriceHistory = () => {
     const priceHistory = getPriceHistory() || [];
     const filterredPrice = priceHistory.filter(history => history.ProductId == productId).slice(-5);
     const newPriceHistory = filterredPrice.map((price) => parseInt(price.NewPrice));
-    const chartDate = filterredPrice.map((dates) => dates.Changetime);
+    const chartDate = filterredPrice.map((dates) => dates.ChangeTime);
 
     const options = {
         title: {
