@@ -15,11 +15,13 @@ const ProductItem = ({ID, Name, EAN, Type, Weight, Color, Quantity, Price, Enabl
 
     const deleteProduct = () => {
         window.confirm('Are you sure to delete?') && deleteItem(ID);
+        window.location.reload();
     }
 
     const checkboxClicked = () => {
         disableProduct(ID);
         setActive(!isActive);
+        window.location.reload();
     }
 
     return (
