@@ -19,7 +19,6 @@ const PriceHistory = () => {
     const newPriceHistory = filterredPrice.map((price) => parseInt(price.NewPrice));
     const chartDate = filterredPrice.map((dates) => dates.Changetime);
 
-
     const options = {
         title: {
           text: 'Price History'

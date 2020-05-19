@@ -16,9 +16,8 @@ const QuantityHistory = () => {
     const quantityHistory = getQuantityHistory() || [];
     const filterredQuantity = quantityHistory.filter(history => history.ProductId == productId).slice(-5);
     const chartQuantity = filterredQuantity.map((quantity) => parseInt(quantity.NewQuantity));
+
     const chartDate = filterredQuantity.map((dates) => dates.Changetime);
-
-
 
     const options = {
         title: {

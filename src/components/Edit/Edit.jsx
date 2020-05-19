@@ -58,14 +58,20 @@ const Edit = () => {
     }
 
     const updateProductsData = () => {
-        const updatedProduct = {Name: nameValue, EAN: EANValue, Type:typeValue, Weight: weightValue, Color: colorValue, Quantity: quantityValue, Price: priceValue,};
+        const updatedProduct = {Name: nameValue, EAN: EANValue, Type:typeValue, Weight: weightValue, Color: colorValue, Quantity: quantityValue, Price: priceValue, Enabled: true};
         ProductsData[productId] = updatedProduct;
         setData(ProductsData);
     }
     
+    const dateFormatting = {
+        year: 'numeric', month: 'numeric', day: 'numeric',
+        hour: 'numeric', minute: 'numeric', second: 'numeric',
+        hour12: false
+    };
+
     const updateHistoryData = () => {
-        const changeDate = new Date().toJSON();
-        const priceChange = {ProductId: productId, OldPrice: Product.Price, NewPrice: priceValue, ChangeTime: changeDate, };
+        const changeDate = Intl.DateTimeFormat('default', dateFormatting).format(new Date()); 
+        const priceChange = {ProductId: productId, OldPrice: Product.Price, NewPrice: priceValue, ChangeTime: changeDate.toString(), };
         const quantityChange = {ProductId: productId, OldQuantity: Product.Quantity, NewQuantity: quantityValue, ChangeTime: changeDate, };
         PricesHistoryData.push(priceChange);
         QuantityHistoryData.push(quantityChange);
